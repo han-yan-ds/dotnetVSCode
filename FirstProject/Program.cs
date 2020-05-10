@@ -28,7 +28,8 @@ namespace Delegates
             // delegates can also use custom functions and lambda expressions
             filterHandler += (ph => Console.WriteLine("Removed Redeye"));
 
-            processor.Process(photo, filterHandler); // will run 3 functions on photo
+            // Now, run 3 functions (loaded onto Delegate) on photo
+            processor.Process(photo, filterHandler);
         }
     }
 }
