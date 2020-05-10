@@ -1,12 +1,13 @@
 ﻿using System;
 
-namespace FirstProject
+namespace dotnetVSCode
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main(string[] args) // Main method is the entry point to the application
         {
-            Console.WriteLine("Hello World!");
+            Person han = new Person(new DateTime(1987, 03, 08));
+            Console.WriteLine($"Age is {han.Age}");
         }
     }
 }
