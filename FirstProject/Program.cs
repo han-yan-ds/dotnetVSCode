@@ -1,12 +1,16 @@
 ﻿using System;
 
-namespace FirstProject
+namespace dotnetVSCode
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Queue<string> checkoutLine = new Queue<string>();
+            checkoutLine.Enqueue("Han");
+            checkoutLine.Enqueue("Bob");
+            Console.WriteLine(checkoutLine.Dequeue()); // should be Han
+            Console.WriteLine(checkoutLine.Dequeue()); // should be Bob
         }
     }
 }
