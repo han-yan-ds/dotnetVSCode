@@ -1,4 +1,4 @@
-using System.Collections.Generics;
+using System.Collections.Generic;
 
 namespace dotnetVSCode 
 {
@@ -17,8 +17,8 @@ namespace dotnetVSCode
 
     public T Dequeue() {
       T lastItem = list[0];
-      list.RemoveAt[0];
-      return T;
+      list.RemoveAt(0);
+      return lastItem;
     }
 
   }
