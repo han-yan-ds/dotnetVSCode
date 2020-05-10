@@ -3,3 +3,4 @@
 .ionide
 bin
 obj
+*.deb
