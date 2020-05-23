@@ -7,6 +7,8 @@ namespace Delegates
 * 1) Target (what the delegate is running its functions on)
 * 2) Method (typically something like () => function(target))
 * 
+* IMPORTANT: (A delegate is essentially a way to load methods)
+*
 * A delegate is converted to a System.MulticastDelegate when it gets a function added onto it (see "+=" below)
 * A MulticastDelegate object has:
 * 1) _invocationCount (# of functions assigned to it to run)
