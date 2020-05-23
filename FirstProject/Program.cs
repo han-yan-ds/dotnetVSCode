@@ -23,15 +23,15 @@ namespace Delegates
             PhotoFilters filters = new PhotoFilters();
             object photo = new object();
 
-            // PhotoFilterHandler is a delegate in the PhotoProcessor class, assigned to a function
-            PhotoProcessor.PhotoFilterHandler filterHandler = filters.ApplyBrightness;
-            // delegates (such as filterHandler) can use the += operator to add another function to be run
-            filterHandler += filters.ApplyContrast;
+            // ProcessPhotoDelegate is a delegate in the PhotoProcessor class, assigned to a function
+            PhotoProcessor.ProcessPhotoDelegate processPhoto = filters.ApplyBrightness;
+            // delegates (such as processPhoto) can use the += operator to add another function to be run
+            processPhoto += filters.ApplyContrast;
             // delegates can also use custom functions and lambda expressions
-            filterHandler += (ph => Console.WriteLine("Removed Redeye"));
+            processPhoto += (ph => Console.WriteLine("Removed Redeye"));
 
             // Now, run 3 functions (loaded onto Delegate) on photo
-            processor.Process(photo, filterHandler);
+            processPhoto(photo);
         }
     }
 }
