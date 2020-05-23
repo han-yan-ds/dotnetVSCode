@@ -19,7 +19,6 @@ namespace Delegates
     {
         static void Main(string[] args)
         {
-            PhotoProcessor processor = new PhotoProcessor();
             PhotoFilters filters = new PhotoFilters();
             object photo = new object();
 
