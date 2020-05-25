@@ -6,12 +6,12 @@ namespace EventHandling
   public class VideoEncoder
   {
     /*
-    * 1- Define a delegate
-    * 2- Define an event based on that delegate
+    * 1- Define a delegate (EventHandler is already a delegate)
+    * 2- Define an event based on that delegate (EventHandler by default takes in 1st generic-type param as this object)
     * 3- Raise the event
     */
 
-    public event Action<object, EventArgs> VideoEncoded; // delegate + event based on that delegate
+    public event EventHandler<EventArgs> VideoEncoded; // delegate + event based on that delegate
 
     protected virtual void OnVideoEncoded() // event publisher (notifies event subscribers)
     {
