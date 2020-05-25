@@ -11,18 +11,19 @@ namespace EventHandling
     * 3- Raise the event
     */
 
-    public Action<object, EventArgs> VideoEncodedEventHandler; // delegate, determines function signature of subscribers
+    public delegate void VideoEncodedEventHandler(object source, EventArgs e); // delegate
     public event VideoEncodedEventHandler VideoEncoded; // event based on that delegate
+
+    protected virtual void OnVideoEncoded() // event publisher (notifies event subscribers)
+    {
+      if (VideoEncoded != null) VideoEncoded(this, EventArgs.Empty);
+    }
 
     public void Encode(Video video)
     {
       Console.WriteLine("Encoding Video, wait 3 seconds...");
       Thread.Sleep(3000);
-    }
-
-    protected virtual void OnVideoEncoded() // event publisher (notifies event subscribers)
-    {
-      if (VideoEncoded != null) VideoEncoded(this, EventArgs.Empty);
+      OnVideoEncoded(); // runs event publisher
     }
   }
 }
