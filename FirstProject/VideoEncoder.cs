@@ -11,8 +11,7 @@ namespace EventHandling
     * 3- Raise the event
     */
 
-    public delegate void VideoEncodedEventHandler(object source, EventArgs e); // delegate
-    public event VideoEncodedEventHandler VideoEncoded; // event based on that delegate
+    public event Action<object, EventArgs> VideoEncoded; // delegate + event based on that delegate
 
     protected virtual void OnVideoEncoded() // event publisher (notifies event subscribers)
     {
