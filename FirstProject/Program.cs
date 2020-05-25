@@ -14,12 +14,12 @@ namespace Delegates
             PhotoFilters filters = new PhotoFilters();
             object photo = new object();
 
-            Action<object> processPhoto = filters.ApplyBrightness;
+            Action<object, int> processPhoto = filters.ApplyBrightness;
             processPhoto += filters.ApplyContrast;
-            processPhoto += (ph => Console.WriteLine("Removed Redeye"));
+            processPhoto += ((ph, pct) => Console.WriteLine($"Removed Redeye by {pct}%"));
 
             // Now, run 3 functions (loaded onto Delegate) on photo
-            processPhoto(photo);
+            processPhoto(photo, 4);
         }
     }
 }
