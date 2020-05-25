@@ -1,12 +1,15 @@
 ﻿using System;
 
-namespace FirstProject
+namespace EventHandling 
 {
-    class Program
+  class Program
+  {
+    public static void Main(string[] args)
     {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Hello World!");
-        }
+      var video = new Video("Video 1");
+      var videoEncoder = new VideoEncoder();
+
+      videoEncoder.Encode(video);
     }
+  }
 }
