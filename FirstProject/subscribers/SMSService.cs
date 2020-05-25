@@ -2,11 +2,11 @@ using System;
 
 namespace EventHandling
 {
-  public class MailService
+  public class SMSService
   {
     public void OnVideoEncoded(object source, EventArgs e) // note same signature enforced by delegate
     {
-      Console.WriteLine("MailService: Email Sent");
+      Console.WriteLine("SMS Service: Text Message Sent");
     }
   }
 }
